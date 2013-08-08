@@ -44,8 +44,9 @@ class forum_uploadcallback {
             return $this->uploadmsg(22);#todo
         }    
         $filesize = intval($_GET['filesize']); 
-        $mimetype = $_GET['mimetype'];
-        $this->isimage = $isimage = count(explode('image', $mimetype)) > 1;
+        #$mimetype = $_GET['mimetype'];
+        #$this->isimage = $isimage = count(explode('image', $mimetype)) > 1;
+        $this->isimage = $isimage = $this->is_image_ext($fileext);
         
         $etag = $_GET['attachment'];
         $this->attachment = $attachment = upload_rename('forum', $etag, $fileext); 
@@ -107,8 +108,8 @@ class forum_uploadcallback {
         updatemembercount($_G['uid'], array('todayattachs' => 1, 'todayattachsize' => $filesize));
         
         if($_GET['type'] == 'image' && !$isimage) {
-            return $this->uploadmsg(7);
-        }
+			return $this->uploadmsg(7);
+		}
 
         $thumb = $width = 0;
         $remote = 0;
@@ -177,6 +178,11 @@ class forum_uploadcallback {
             echo $statusid ? -$statusid : $this->aid;
         }
         exit;        
+    }
+    
+    function is_image_ext($ext) {
+        static $imgext  = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
+        return in_array($ext, $imgext) ? 1 : 0;
     }
 }
 
