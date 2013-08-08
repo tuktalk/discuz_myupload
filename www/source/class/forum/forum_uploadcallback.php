@@ -127,8 +127,8 @@ class forum_uploadcallback {
         #分配attachid
         $this->aid = $aid = getattachnewaid($this->uid);
                 
-        if($_GET['type'] != 'image' && $isiamge) {
-            $insert_isiamge = -1;
+        if($_GET['type'] != 'image' && $isimage) {
+            $insert_isimage = -1;
         } else {
             $insert_isimage = $isimage;
         }
