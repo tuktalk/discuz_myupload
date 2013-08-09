@@ -5,18 +5,18 @@ if(!defined('IN_DISCUZ')) {
     exit('Access Denied');
 }
 
-#$_G['uid'] = intval($_POST['uid']);
+$_G['uid'] = intval($_POST['uid']);
 
-#if((empty($_G['uid']) && $_GET['operation'] != 'upload') || $_POST['hash'] != md5(substr(md5($_G['config']['security']['authkey']), 8).$_G['uid'])) {
-#    exit();
-#} else {
-#    if($_G['uid']) {
-#        $_G['member'] = getuserbyuid($_G['uid']);
-#    }
-#    $_G['groupid'] = $_G['member']['groupid'];
-#    loadcache('usergroup_'.$_G['member']['groupid']);
-#    $_G['group'] = $_G['cache']['usergroup_'.$_G['member']['groupid']];
-#}
+if((empty($_G['uid']) && $_GET['operation'] != 'upload') || $_POST['hash'] != md5(substr(md5($_G['config']['security']['authkey']), 8).$_G['uid'])) {
+    exit();
+} else {
+    if($_G['uid']) {
+        $_G['member'] = getuserbyuid($_G['uid']);
+    }
+    $_G['groupid'] = $_G['member']['groupid'];
+    loadcache('usergroup_'.$_G['member']['groupid']);
+    $_G['group'] = $_G['cache']['usergroup_'.$_G['member']['groupid']];
+}
 
 if($_GET['operation'] == 'upload') {    
     $forumattachextensions = '';
