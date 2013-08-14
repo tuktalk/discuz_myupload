@@ -9,7 +9,7 @@
   `>>> cp -r code/* /my/website/`  
 
 2.  为将会被修改的discuz代码文件增加写权限。  
-  `chmod 666 /my/website/misc.php /my/website/forum.php /my/website/source/module/forum/forum_image/php`  
+  `>>> chmod 666 /my/website/misc.php /my/website/forum.php /my/website/source/module/forum/forum_image/php`  
 
 3.  如果使用了自定义模板，需要修改 /my/website/template/custom_template/forum/ 文件夹中的
 forumdisplay_fastpost.htm、post.htm、viewthread_fastpost.htm 三个文件中swfupload相关设置，
