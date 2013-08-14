@@ -45,18 +45,18 @@
 				<item id="displayorder"><![CDATA[1]]></item>
 				<item id="title"><![CDATA[Access Key]]></item>
 				<item id="description"><![CDATA[你的 access key]]></item>
-				<item id="variable"><![CDATA[access_key]]></item>
+				<item id="variable"><![CDATA[accesskey]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[]]></item>
+				<item id="value"><![CDATA[<YOUR ACCESS KEY>]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="2">
 				<item id="displayorder"><![CDATA[2]]></item>
 				<item id="title"><![CDATA[Secret Key]]></item>
 				<item id="description"><![CDATA[你的 secret key]]></item>
-				<item id="variable"><![CDATA[secret_key]]></item>
+				<item id="variable"><![CDATA[secretkey]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[]]></item>
+				<item id="value"><![CDATA[<YOUR SECRET KEY>]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="3">
@@ -65,22 +65,22 @@
 				<item id="description"><![CDATA[你的七牛空间名]]></item>
 				<item id="variable"><![CDATA[bucket]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[]]></item>
+				<item id="value"><![CDATA[<YOUR BUCKET>]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="4">
 				<item id="displayorder"><![CDATA[4]]></item>
 				<item id="title"><![CDATA[七牛域名]]></item>
-				<item id="description"><![CDATA[你的七牛域名]]></item>
+				<item id="description"><![CDATA[你的七牛域名,不能以'/'结尾]]></item>
 				<item id="variable"><![CDATA[domain]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[]]></item>
+				<item id="value"><![CDATA[<YOUR DOMAIN>]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="5">
 				<item id="displayorder"><![CDATA[5]]></item>
 				<item id="title"><![CDATA[文件前缀]]></item>
-				<item id="description"><![CDATA[上传文件的前缀]]></item>
+				<item id="description"><![CDATA[上传文件的前缀,一般不要修改]]></item>
 				<item id="variable"><![CDATA[prefix]]></item>
 				<item id="type"><![CDATA[text]]></item>
 				<item id="value"><![CDATA[data/attachement]]></item>
@@ -90,16 +90,16 @@
 				<item id="displayorder"><![CDATA[6]]></item>
 				<item id="title"><![CDATA[回调地址]]></item>
 				<item id="description"><![CDATA[七牛直传回调时使用的地址，需在公网上可以访问]]></item>
-				<item id="variable"><![CDATA[callback_url]]></item>
+				<item id="variable"><![CDATA[callbackurl]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[http://]]></item>
+				<item id="value"><![CDATA[http://<your-host>/misc.php?mod=uploadcallback&operation=upload]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="7">
 				<item id="displayorder"><![CDATA[7]]></item>
 				<item id="title"><![CDATA[回调格式]]></item>
-				<item id="description"><![CDATA[回调所包含的参数，一般不需要修改]]></item>
-				<item id="variable"><![CDATA[callback_body]]></item>
+				<item id="description"><![CDATA[回调所包含的参数，一般不要修改]]></item>
+				<item id="variable"><![CDATA[callbackbody]]></item>
 				<item id="type"><![CDATA[text]]></item>
 				<item id="value"><![CDATA[fid=$(x:fid)&uid=$(x:uid)&hash=$(x:hash)&filename=$(fname)&filesize=$(fsize)&mimetype=$(mimeType)&exif=$(exif)&width=$(imageInfo.width)&attachment=$(etag)&type=$(x:type)]]></item>
 				<item id="extra"><![CDATA[]]></item>
@@ -107,7 +107,7 @@
 			<item id="8">
 				<item id="displayorder"><![CDATA[8]]></item>
 				<item id="title"><![CDATA[上传地址]]></item>
-				<item id="description"><![CDATA[七牛上传服务器的地址，一般不需要修改]]></item>
+				<item id="description"><![CDATA[七牛上传服务器的地址，一般不要修改]]></item>
 				<item id="variable"><![CDATA[up_host]]></item>
 				<item id="type"><![CDATA[text]]></item>
 				<item id="value"><![CDATA[http://up.qiniu.com/]]></item>
