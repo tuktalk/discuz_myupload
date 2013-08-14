@@ -83,7 +83,7 @@
 				<item id="description"><![CDATA[上传文件的前缀,一般不要修改]]></item>
 				<item id="variable"><![CDATA[prefix]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[data/attachement]]></item>
+				<item id="value"><![CDATA[data/attachment]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="6">
