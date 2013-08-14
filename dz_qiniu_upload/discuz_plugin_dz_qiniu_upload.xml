@@ -74,7 +74,7 @@
 				<item id="description"><![CDATA[你的七牛域名,不能以'/'结尾]]></item>
 				<item id="variable"><![CDATA[domain]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[<YOUR DOMAIN>]]></item>
+				<item id="value"><![CDATA[http://<YOUR DOMAIN>]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="5">
