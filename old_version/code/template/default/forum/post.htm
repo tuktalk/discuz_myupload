@@ -265,16 +265,13 @@
 		<!--{subtemplate common/upload}-->
 		<script type="text/javascript">
 		<!--{if $allowpostimg}-->
+		<!--{if $_G['config']['qiniu']['switch']}-->
 		    var imgUpload = new SWFUpload({
-            <!--{eval loadcache('plugin');}-->
-            <!--{if $_G['cache']['plugin']['dz_qiniu_upload']['switch']}-->
 		        file_post_name: "file",						
-				upload_url: "$_G['cache']['plugin']['dz_qiniu_upload']['up_host']",
+				upload_url: "$_G['config']['qiniu']['up_host']",
 				post_params: {"x:type":"image", "x:fid": "$_G[fid]", "x:uid" : "$_G[uid]", "x:hash":"$swfconfig[hash]", "token": "<!--{eval echo getuptoken();}-->"},
-            <!--{else}-->
-                upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
-                post_params: {"uid" : "$_G[uid]", "hash":"$swfconfig[hash]", "type":"image"},
-            <!--{/if}-->
+				//upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
+				//post_params: {"uid" : "$_G[uid]", "hash":"$swfconfig[hash]", "type":"image"},
 				file_size_limit : "$swfconfig[max]",
 				file_types : "$swfconfig[imageexts][ext]",
 				file_types_description : "$swfconfig[imageexts][depict]",
@@ -316,18 +313,59 @@
 				debug: false
 				//debug: true
 			});	
+		<!--{else}-->
+		    var imgUpload = new SWFUpload({
+				upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
+				post_params: {"uid" : "$_G[uid]", "hash":"$swfconfig[hash]", "type":"image"},
+				file_size_limit : "$swfconfig[max]",
+				file_types : "$swfconfig[imageexts][ext]",
+				file_types_description : "$swfconfig[imageexts][depict]",
+				file_upload_limit : $swfconfig['limit'],
+				file_queue_limit : 0,
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_dialog_start_handler : fileDialogStart,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				button_image_url : "{IMGDIR}/uploadbutton.png",
+				button_placeholder_id : "imgSpanButtonPlaceholder",
+				button_width: 100,
+				button_height: 25,
+				button_cursor:SWFUpload.CURSOR.HAND,
+				button_window_mode: "transparent",
+				custom_settings : {
+					progressTarget : "imgUploadProgress",
+					uploadSource: 'forum',
+					uploadType: 'image',
+					imgBoxObj: $('imgattachlist'),
+					<!--{if $swfconfig['maxsizeperday']}-->
+					maxSizePerDay: $swfconfig['maxsizeperday'],
+					<!--{/if}-->
+					<!--{if $swfconfig['maxattachnum']}-->
+					maxAttachNum: $swfconfig['maxattachnum'],
+					<!--{/if}-->
+					<!--{if $swfconfig['filtertype']}-->
+					filterType: $swfconfig['filtertype'],
+					<!--{/if}-->
+					singleUpload: $('{$editorid}_btn_local')
+				},
+				debug: false
+				//debug: true
+			});	
+		<!--{/if}-->	        		
 		<!--{/if}-->
 		<!--{if $_G['group']['allowpostattach']}-->
+		<!--{if $_G['config']['qiniu']['switch']}-->
 		    var upload = new SWFUpload({
-            <!--{eval loadcache('plugin');}-->
-            <!--{if $_G['cache']['plugin']['dz_qiniu_upload']['switch']}-->
 				file_post_name: "file",						
-				upload_url: "$_G['cache']['plugin']['dz_qiniu_upload']['up_host']",
+				upload_url: "$_G['config']['qiniu']['up_host']",
 				post_params: {"x:fid": "$_G[fid]", "x:uid" : "$_G[uid]", "x:hash":"$swfconfig[hash]", "token": "<!--{eval echo getuptoken();}-->"},				
-            <!--{else}-->
-                upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
-                post_params: {"uid":"$_G[uid]", "hash":"$swfconfig[hash]"},
-            <!--{/if}-->
 				file_size_limit : "$swfconfig[max]",
 				file_types : "$swfconfig[attachexts][ext]",
 				file_types_description : "$swfconfig[attachexts][depict]",
@@ -369,6 +407,52 @@
 				debug: false
 				//debug: true
 			});
+		<!--{else}-->
+		    var upload = new SWFUpload({
+				upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
+				post_params: {"uid":"$_G[uid]", "hash":"$swfconfig[hash]"},
+				file_size_limit : "$swfconfig[max]",
+				file_types : "$swfconfig[attachexts][ext]",
+				file_types_description : "$swfconfig[attachexts][depict]",
+				file_upload_limit : $swfconfig['limit'],
+				file_queue_limit : 0,
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_dialog_start_handler : fileDialogStart,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				button_image_url : "{IMGDIR}/uploadbutton.png",
+				button_placeholder_id : "spanButtonPlaceholder",
+				button_width: 100,
+				button_height: 25,
+				button_cursor:SWFUpload.CURSOR.HAND,
+				button_window_mode: "transparent",
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					uploadSource: 'forum',
+					uploadType: 'attach',
+					<!--{if $swfconfig['maxsizeperday']}-->
+					maxSizePerDay: $swfconfig['maxsizeperday'],
+					<!--{/if}-->
+					<!--{if $swfconfig['maxattachnum']}-->
+					maxAttachNum: $swfconfig['maxattachnum'],
+					<!--{/if}-->
+					<!--{if $swfconfig['filtertype']}-->
+					filterType: $swfconfig['filtertype'],
+					<!--{/if}-->
+					singleUpload: $('{$editorid}_btn_upload')
+				},
+
+				debug: false
+				//debug: true
+			});
+		<!--{/if}-->			
 		<!--{/if}-->
 		</script>
 	<!--{else}-->

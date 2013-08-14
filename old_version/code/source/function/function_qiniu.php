@@ -8,24 +8,22 @@ require_once("qiniu/rs.php");
 
 function getuptoken() {
     global $_G;
-    loadcache('plugin');
-    $bucket = $_G['cache']['plugin']['dz_qiniu_upload']['bucket'];
-    $accessKey = $_G['cache']['plugin']['dz_qiniu_upload']['accesskey'];
-    $secretKey = $_G['cache']['plugin']['dz_qiniu_upload']['secretkey'];
+    $bucket = $_G['config']['qiniu']['bucket'];
+    $accessKey = $_G['config']['qiniu']['accesskey'];
+    $secretKey = $_G['config']['qiniu']['secretkey'];
     Qiniu_SetKeys($accessKey, $secretKey);
     $putPolicy = new Qiniu_RS_PutPolicy($bucket);        
-    $putPolicy->CallbackUrl = $_G['cache']['plugin']['dz_qiniu_upload']['callbackurl'];
-    $putPolicy->CallbackBody = $_G['cache']['plugin']['dz_qiniu_upload']['callbackbody'];
+    $putPolicy->CallbackUrl = $_G['config']['qiniu']['callbackurl'];
+    $putPolicy->CallbackBody = $_G['config']['qiniu']['callbackbody'];
     $upToken = $putPolicy->Token(null);
     return $upToken; 
 }
 
 function upload_rename($type, $src_key, $ext='', $dest_key='', $extid = 0) {    
     global $_G;    
-    loadcache('plugin');
-    $bucket = $_G['cache']['plugin']['dz_qiniu_upload']['bucket'];
-    $accessKey = $_G['cache']['plugin']['dz_qiniu_upload']['accesskey'];
-    $secretKey = $_G['cache']['plugin']['dz_qiniu_upload']['secretkey'];
+    $bucket = $_G['config']['qiniu']['bucket'];
+    $accessKey = $_G['config']['qiniu']['accesskey'];
+    $secretKey = $_G['config']['qiniu']['secretkey'];
     Qiniu_SetKeys($accessKey, $secretKey);
     $client = new Qiniu_MacHttpClient(null);        
     
@@ -52,13 +50,12 @@ function upload_rename($type, $src_key, $ext='', $dest_key='', $extid = 0) {
 
 function upload_makekey($type, $extid = 0, $ext = '', $forcename = '') {
     global $_G;
-    loadcache('plugin');
     if($type == 'group' || ($type == 'common' && $forcename != '')) {
         $filename = $type.'_'.intval($extid).($forcename != '' ? "_$forcename" : '');
     } else {
         $filename = date('His').strtolower(random(16));
     }
-    $prefix = $_G['cache']['plugin']['dz_qiniu_upload']['prefix'] ? $_G['cache']['plugin']['dz_qiniu_upload']['prefix'] . '/' : '';   
+    $prefix = $_G['config']['qiniu']['prefix'] ? $_G['config']['qiniu']['prefix'] . '/' : '';   
     $type = $type ? $type . '/' : '';
     $ext = $ext ? '.' . $ext : '';
     $attachment = date('Ym') . '/' . date('d') . '/' . $filename . $ext;

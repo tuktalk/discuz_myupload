@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3]]></item>
+	<item id="Time"><![CDATA[2013-08-09 16:00]]></item>
+	<item id="From"><![CDATA[Discuz! Board]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[七牛云存储直传助手]]></item>
+			<item id="identifier"><![CDATA[dz_qiniu_upload]]></item>
+			<item id="description"><![CDATA[使用七牛直传接管附件上传]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dz_qiniu_upload/]]></item>
+			<item id="copyright"><![CDATA[TukTalk]]></item>
+			<item id="version"><![CDATA[v0.0.1]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[dz_qiniu_upload]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否启用七牛直传]]></item>
+				<item id="description"><![CDATA[是否启用七牛直传]]></item>
+				<item id="variable"><![CDATA[switch]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[Access Key]]></item>
+				<item id="description"><![CDATA[你的 access key]]></item>
+				<item id="variable"><![CDATA[access_key]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[Secret Key]]></item>
+				<item id="description"><![CDATA[你的 secret key]]></item>
+				<item id="variable"><![CDATA[secret_key]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[七牛空间名]]></item>
+				<item id="description"><![CDATA[你的七牛空间名]]></item>
+				<item id="variable"><![CDATA[bucket]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[七牛域名]]></item>
+				<item id="description"><![CDATA[你的七牛域名]]></item>
+				<item id="variable"><![CDATA[domain]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[文件前缀]]></item>
+				<item id="description"><![CDATA[上传文件的前缀]]></item>
+				<item id="variable"><![CDATA[prefix]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[data/attachement]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[回调地址]]></item>
+				<item id="description"><![CDATA[七牛直传回调时使用的地址，需在公网上可以访问]]></item>
+				<item id="variable"><![CDATA[callback_url]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[回调格式]]></item>
+				<item id="description"><![CDATA[回调所包含的参数，一般不需要修改]]></item>
+				<item id="variable"><![CDATA[callback_body]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[fid=$(x:fid)&uid=$(x:uid)&hash=$(x:hash)&filename=$(fname)&filesize=$(fsize)&mimetype=$(mimeType)&exif=$(exif)&width=$(imageInfo.width)&attachment=$(etag)&type=$(x:type)]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[上传地址]]></item>
+				<item id="description"><![CDATA[七牛上传服务器的地址，一般不需要修改]]></item>
+				<item id="variable"><![CDATA[up_host]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://up.qiniu.com/]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>
