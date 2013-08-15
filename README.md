@@ -37,4 +37,4 @@
 设置“本地附件url地址”为`http://<your-qiniu-domain>/data/attachment`。  
   ![local_url](http://t-test-public.qiniudn.com/local_url.png)  
 
-7.  如果需要停止使用，只要将“是否使用七牛直传”设置为“否”。  
+7.  如果要停止使用，只需将“是否使用七牛直传”设置为“否”。  
