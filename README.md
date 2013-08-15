@@ -14,6 +14,9 @@
 `forumdisplay_fastpost.htm`、`post.htm`、`viewthread_fastpost.htm` 三个文件中swfupload相关设置。
 可参考 `discuz_my_upload/code/template/default/` 中的相应文件。  
 
+[![forumdisplay_fastpost](http://t-test-public.qiniudn.com/forumdisplay_fastpost.png)]  
+
+
 4.  进入discuz管理中心->应用->插件，安装并启用“七牛云存储直传助手 v0.0.1”。  
 5.  进入discuz管理中心->应用->七牛云存储直传助手的设置页面，按照自己的实际情况填写参数，
 并将“是否使用七牛直传”设置为“是”。  
