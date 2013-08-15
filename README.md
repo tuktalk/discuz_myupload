@@ -14,13 +14,13 @@
 `forumdisplay_fastpost.htm`、`post.htm`、`viewthread_fastpost.htm` 三个文件中swfupload相关设置。
 可参考 `discuz_my_upload/code/template/default/` 中的相应文件。  
 
-  forumdisplay_fastpost.htm:  
+  **forumdisplay_fastpost.htm中的修改：**  
   ![forumdisplay_fastpost](http://t-test-public.qiniudn.com/forumdisplay_fastpost_w.png)  
-  viewthread_fastpost.htm:  
+  **viewthread_fastpost.htm中的修改：**  
   ![viewthread_fastpost](http://t-test-public.qiniudn.com/viewthread_fastpost_w.png)  
-  post.htm 第一处修改:  
+  **post.htm 第一处修改:**  
   ![post_1](http://t-test-public.qiniudn.com/post_1_w.png)  
-  post.htm 第二处修改:  
+  **post.htm 第二处修改:**  
   ![post](http://t-test-public.qiniudn.com/post_2_w.png)  
 
 
