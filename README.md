@@ -25,7 +25,7 @@
 
 
 4.  进入discuz管理中心->应用->插件，安装并启用“七牛云存储直传助手 v0.0.1”。  
-  ![before_installed](http://t-test-public.qiniudn.com/before_installed.png)  
+  ![before_installed](http://t-test-public.qiniudn.com/before_install.png)  
   ![installed](http://t-test-public.qiniudn.com/installed.png)  
   ![turned_on](http://t-test-public.qiniudn.com/turned_on.png)  
 
